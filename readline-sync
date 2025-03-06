@@ -1,0 +1,8 @@
+const input = require('readline-sync');
+
+let info = input.question("Please enter a number:");
+
+let double = Number(info) *2
+
+console.log(typeof double)
+console.log(double)
