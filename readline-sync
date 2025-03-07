@@ -1,8 +1,35 @@
-const input = require('readline-sync');
+/* This is  the practice code that I created for readline-sync practice. */
 
-let info = input.question("Please enter a number:");
+const readline = require('readline-sync');  // imports the readline-sync module previously installed in Git Bash
+let userName = readline.question("What name should I call you by? ");  // asks the user for their name
+console.log(`Bon Jour, ${userName}!`);  // greets the user by their name
 
-let double = Number(info) *2
+console.log("---Question 1---:");  // prints the first question
+let conversionTypes = ['Explicit Conversion', 'type casting', 'VHS to CD', 'Type Coercion', 'Implicit Conversion']; //  array of data conversion types
+let index = readline.keyInSelect(conversionTypes,  'Which is NOT a type of data conversion we studied?');
+if (index !== -1) { // Check if a valid selection was made
+    console.log('You chose: ' + conversionTypes[index] + '. VHS to CD is the correct selection.');
+  } else {
+    console.log('You did not make a selection!');
+  }
+console.log("---Question 2---:");
+let questionFunction = readline.question("All User inputs for the .question() function start as what data type? ");
+console.log( "Your selection was: " + questionFunction + ". The correct answer is 'string'."); 
 
-console.log(typeof double)
-console.log(double)
+console.log("---Question 3---:");
+let equalityOperator = readline.question("What strict operator can you use in JavaScript to prevent implicit conversion? ");
+console.log("You chose: " + equalityOperator + ". The correct answer is '==='.");
+
+console.log("---Question 4---:");
+let mathOps = readline.question("Implicit conversion in arithmetic operations causes issues with what math function, hint: Concatenation overides? ");
+console.log("You chose: " + mathOps + ". The correct answer is 'addition'.");
+
+console.log("---Question 5---:");
+let dataTypes = readline.questionInt("How many PRIMITIVE data types are there in JavaScript? ");
+console.log("You chose: " + dataTypes + ". There's: String, Number, Boolean, Undefined, Null, symbol & BigInt.-7 total" );
+
+console.log("-----------------------------------------------------------------------------------");
+
+console.log(" Great Job!  Your Answers were: " + conversionTypes[index] + ", " + questionFunction + ", " + equalityOperator + ", " + mathOps + ", " + dataTypes + ".");  // prints the user's answers
+console.log("The Correct Answers are: 1. VHS to CD,  2. String , 3. (===) , 4. addition , & 5. was 7.");  // prints the correct answers
+console.log("Thank you for playing! " + userName + " Have a great day!");  // prints a closing message
